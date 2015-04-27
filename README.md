@@ -8,7 +8,6 @@ This plugin is inspired by [Brian Gonzalez's adaptative background jquery plugin
 
 ```html
 <script src="jquery.min.js"></script>
-<script src="underscore-min.js"></script>
 <script src="logoBackground.js"></script>
 
 <script>
@@ -20,7 +19,6 @@ This plugin is inspired by [Brian Gonzalez's adaptative background jquery plugin
 
 ### TODO:
 
- * Remove underscore dependency
  * Cross Origin errors documentation
  * How it works documentation
  * Parameters documentation

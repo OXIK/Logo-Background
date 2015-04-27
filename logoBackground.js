@@ -6,6 +6,42 @@
             variance   : .2,
         };
 
+    var _ = {
+        max: function(obj, iteratee) {
+            var current, max = -Infinity, index = -1;
+
+            for(var i in obj) {
+                current = iteratee(obj[i]);
+
+                if(current > max) {
+                    index = i;
+                    max = current;
+                }
+            }
+
+            return obj[index];
+        },
+
+        groupBy: function(obj, iteratee) {
+            var index, groups = {};
+
+            for(var i in obj) {
+                index = iteratee(obj[i]);
+                groups[index] = groups[index] || [];
+                groups[index].push(obj[i]);
+            }
+
+            return groups;
+        },
+
+        reduce: function(obj, iteratee, memo) {
+            for(var i in obj)
+                memo = iteratee(memo, obj[i]);
+
+            return memo;
+        }
+    };
+
     function LogoBackgroundPlugin( element, options ) {
         this.element = element;
         this.options = $.extend({}, defaults, options) ;
